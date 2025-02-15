@@ -27,6 +27,16 @@ def exit():
     root.quit()
 
 
+file_menu = tk.Menu(root)
+root.config(menu=file_menu)
+file_menu.add_cascade(label="File", menu=file_menu)
+file_menu.add_command(label="New", command=new_file)
+file_menu.add_command(label="Open", command=open_file)
+file_menu.add_command(label="Save", command=save_file)
+file_menu.add_separator()
+file_menu.add_command(label="Exit", command=exit)
+
+
 messagebox = tk.Text(root, height=50, width=150)
 messagebox.pack()
 
