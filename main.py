@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import filedialog
+from tkinter import filedialog, messagebox
 
 root = tk.Tk()
 
@@ -37,7 +37,7 @@ file_menu.add_separator()
 file_menu.add_command(label="Exit", command=exit)
 
 
-messagebox = tk.Text(root, height=50, width=150)
+messagebox = tk.Text(root, height=10, width=50)
 messagebox.pack()
 
 # add the buttons after this part, dont touvh the code above
@@ -50,5 +50,7 @@ button_open = tk.Button(root, text="Open", command=open_file)
 
 button_save = tk.Button(root, text="Save", command=save_file)
 
-button_exit = tk.Button(root, text="Exit", command=exit_app)
+button_exit = tk.Button(root, text="Exit", command=exit)
+
+
 root.mainloop()
