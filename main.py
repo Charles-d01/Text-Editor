@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import filedialog, messagebox
+from tkinter import filedialog
 
 root = tk.Tk()
 
@@ -23,7 +23,7 @@ def save_file():
         with open(save_as_file_name, "w") as file:
             file.write(messagebox.get("1.0", "end-1c"))
     
-def exit():
+def exit_app():
     root.quit()
 
 
@@ -34,7 +34,7 @@ file_menu.add_command(label="New", command=new_file)
 file_menu.add_command(label="Open", command=open_file)
 file_menu.add_command(label="Save", command=save_file)
 file_menu.add_separator()
-file_menu.add_command(label="Exit", command=exit)
+file_menu.add_command(label="Exit", command=exit_app)
 
 
 messagebox = tk.Text(root, height=10, width=50)
