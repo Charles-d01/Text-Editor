@@ -16,12 +16,9 @@ def open_file():
 
 messagebox = tk.Text(root, height=50, width=150)
 messagebox.pack()
-openbutton = tk.Button(root, text="Open", comand= open_file())
-openbutton.pack()
 
-Save_button = tk.Button(root, text="Save", command= save_file())
-Save_button.pack()
-exitbutton = tk.Button(root, text="Exit", command=root.quit)
-exitbutton.pack()
+# add the buttons after this part, dont touvh the code above
+#for the command= part of all buttons, name them accordingly,
+# new_file, open_file, save_file, exit_app
 
 root.mainloop()
