@@ -4,6 +4,7 @@ from tkinter import filedialog
 root = tk.Tk()
 
 root.title("Text Editor")
+root.resizable(False, False)
 root.wm_iconbitmap("Icon.ico")
 
 def new_file():
@@ -37,11 +38,11 @@ file_menu.add_command(label="Exit", command=exit_app)
 root.config(menu=menubar)
 
 main_frame = tk.Frame(root)
-main_frame.pack(expand=True, fill='both', padx=5, pady=5)
+main_frame.grid(row=0, column=0, sticky="nsew")
 
 
-text_area = tk.Text(main_frame, height=10, width=50)
-text_area.pack()
+text_area = tk.Text(main_frame, height=30, width=80)
+text_area.grid(row=0, column=0, columnspan=4, padx=5, pady=5, sticky="nsew")
 
 # add the buttons after this part, dont touvh the code above
 #for the command= part of all buttons, name them accordingly,
