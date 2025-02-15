@@ -23,7 +23,7 @@ def save_file():
         with open(save_as_file_name, "w") as file:
             file.write(messagebox.get("1.0", "end-1c"))
     
-def exit():
+def exit_app():
     root.quit()
 
 
@@ -34,10 +34,10 @@ file_menu.add_command(label="New", command=new_file)
 file_menu.add_command(label="Open", command=open_file)
 file_menu.add_command(label="Save", command=save_file)
 file_menu.add_separator()
-file_menu.add_command(label="Exit", command=exit)
+file_menu.add_command(label="Exit", command=exit_app)
 
 
-messagebox = tk.Text(root, height=50, width=150)
+messagebox = tk.Text(root, height=10, width=50)
 messagebox.pack()
 
 # add the buttons after this part, dont touvh the code above
@@ -50,6 +50,6 @@ button_open = tk.Button(root, text="Open", command=open_file)
 button_open.grid(row=1, column=1, padx=5, pady=5, sticky="ew")
 button_save = tk.Button(root, text="Save", command=save_file)
 button_save.grid(row=1, column=2, padx=5, pady=5, sticky="ew")
-button_exit = tk.Button(root, text="Exit", command=exit)
+button_exit = tk.Button(root, text="Exit", command=exit_app)
 button_exit.grid(row=1, column=3, padx=5, pady=5, sticky="ew")
 root.mainloop()
