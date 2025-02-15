@@ -21,4 +21,11 @@ messagebox.pack()
 #for the command= part of all buttons, name them accordingly,
 # new_file, open_file, save_file, exit_app
 
+button_new = tk.Button(root, text="New", command=new_file)
+
+button_open = tk.Button(root, text="Open", command=open_file)
+
+button_save = tk.Button(root, text="Save", command=save_file)
+
+button_exit = tk.Button(root, text="Exit", command=exit_app)
 root.mainloop()
