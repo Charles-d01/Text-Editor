@@ -1,17 +1,30 @@
 import tkinter as tk
+from tkinter import filedialog
 
 root = tk.Tk()
 
 root.title("Text Editor")
 root.wm_iconbitmap("Icon.ico")
 
-def save_file():
-    with open("text.txt", "w") as file:
-        file.write(messagebox.get("1.0", "end-1c"))
+def new_file():
+    messagebox.delete("1.0", "end")
 
 def open_file():
-    with open("text.txt", "r") as file:
-        messagebox.insert("1.0", file.read())
+    file_name = filedialog.askopenfilename(filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")], title = "Open File")
+    if file_name:
+        with open(file_name, "r") as file:
+            messagebox.delete("1.0", "end")
+            messagebox.insert("1.0", file.read())
+
+
+def save_file():
+    save_as_file_name = filedialog.asksaveasfilename(defaultextension=".txt", filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")], title = "Save File as")
+    if save_as_file_name:
+        with open(save_as_file_name, "w") as file:
+            file.write(messagebox.get("1.0", "end-1c"))
+    
+def exit():
+    root.quit()
 
 
 messagebox = tk.Text(root, height=50, width=150)
