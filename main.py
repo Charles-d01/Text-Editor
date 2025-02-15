@@ -45,12 +45,11 @@ messagebox.pack()
 # new_file, open_file, save_file, exit_app
 
 button_new = tk.Button(root, text="New", command=new_file)
-
+button_new.grid(row=1, column=0, padx=5, pady=5, sticky="ew")
 button_open = tk.Button(root, text="Open", command=open_file)
-
+button_open.grid(row=1, column=1, padx=5, pady=5, sticky="ew")
 button_save = tk.Button(root, text="Save", command=save_file)
-
-button_exit = tk.Button(root, text="Exit", command=exit)
-
-
+button_save.grid(row=1, column=2, padx=5, pady=5, sticky="ew")
+button_exit = tk.Button(root, text="Exit", command=exit_app)
+button_exit.grid(row=1, column=3, padx=5, pady=5, sticky="ew")
 root.mainloop()
